@@ -3,8 +3,9 @@
 # Created on: Mar 3, 2025
 # This program is to calculate the surface area and volume of trapezoid prism
 
-#import all the information from color.py
+# import all the information from color.py
 import color
+
 
 def main():
     # print the following to say hi to users in yellow text
