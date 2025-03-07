@@ -3,6 +3,7 @@
 # Created on: Mar 3, 2025
 # This program is to calculate the surface area and volume of trapezoid prism
 
+
 # import all the information from color.py
 import color
 
@@ -36,23 +37,24 @@ def main():
         )
     )
     # the formula of volume and surface area, the result will be printed by light green
-    volume = 0.5 * (short_base + long_base) * height * length
-    surface_area = (
-        (long_base + short_base) * height * 2 * 0.5
-        + short_base * length
-        + long_base * length
-        + left_side_length * length
-        + right_side_length * length
-    )
+    base_area = 0.5 * (short_base + long_base) * height
+
+    # calculate lateral surface area
+    lateral_surface = (
+        short_base + long_base + left_side_length + right_side_length
+    ) * length
+
+    # total surface area
+    surface_area = (2 * base_area) + lateral_surface
+
+    # calculate volume
+    volume = base_area * length
     print("")
     print(
         (str(color.Colors.LIGHT_GREEN))
-        + "Surface area is {} cm^2.".format(surface_area)
+        + "Surface area is {:.2f} cm^2.".format(surface_area)
     )
-    print((str(color.Colors.LIGHT_GREEN)) + "Volume is {} cm^3.".format(volume))
-    # all results are saved to 2 decimal place
-    float("{:.2f}".format(surface_area))
-    float("{:.2f}".format(volume))
+    print((str(color.Colors.LIGHT_GREEN)) + "Volume is {:.2f} cm^3.".format(volume))
 
 
 if __name__ == "__main__":
